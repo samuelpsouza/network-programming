@@ -16,6 +16,7 @@
 #include <string.h>
 
 static const int QUEUE_SIZE = 5;
+const char SERVER_RESPONSE[] = "Hello World";
 
 int main(int argc, char **argv) {
 	if (2 != argc) {
@@ -62,12 +63,14 @@ int main(int argc, char **argv) {
 		int simple_client = 0;
 		int client_name_len = sizeof(client_name);
 
-		accept(simple_socket, (struct sockaddr *) &client_name, &client_name_len);
+		int simple_child_socket = accept(simple_socket, (struct sockaddr *) &client_name, &client_name_len);
 		if(simple_client == -1){
 			fprintf(stderr, "Cannot accept client connection.\n");
 			close(simple_client);
 			exit(EXIT_FAILURE);
 		}
+
+		write(simple_child_socket, SERVER_RESPONSE, strlen(SERVER_RESPONSE));
 	}
 
 	return EXIT_SUCCESS;
