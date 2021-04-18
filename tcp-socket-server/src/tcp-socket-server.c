@@ -57,5 +57,18 @@ int main(int argc, char **argv) {
 		exit(EXIT_FAILURE);
 	}
 
+	while(1){
+		struct sockaddr_in client_name = {0};
+		int simple_client = 0;
+		int client_name_len = sizeof(client_name);
+
+		accept(simple_socket, (struct sockaddr *) &client_name, &client_name_len);
+		if(simple_client == -1){
+			fprintf(stderr, "Cannot accept client connection.\n");
+			close(simple_client);
+			exit(EXIT_FAILURE);
+		}
+	}
+
 	return EXIT_SUCCESS;
 }
