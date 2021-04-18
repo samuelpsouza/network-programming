@@ -15,7 +15,7 @@
 #include <netdb.h>
 #include <string.h>
 
-static const int QUEUE_SIZE = 10;
+static const int QUEUE_SIZE = 5;
 
 int main(int argc, char **argv) {
 	if (2 != argc) {
@@ -44,6 +44,15 @@ int main(int argc, char **argv) {
 		fprintf(stdout, "Bind completed.\n");
 	} else {
 		fprintf(stderr, "Could not bind to address.\n");
+		close(simple_socket);
+		exit(EXIT_FAILURE);
+	}
+
+	int listen_return_status = listen(simple_socket, QUEUE_SIZE);
+	if(listen_return_status == 0){
+		fprintf(stdout, "Server started to listen on port %s.\n", argv[1]);
+	}else {
+		fprintf(stderr, "Cannot listen on socket!\n");
 		close(simple_socket);
 		exit(EXIT_FAILURE);
 	}
