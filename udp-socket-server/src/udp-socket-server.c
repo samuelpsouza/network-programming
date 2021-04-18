@@ -13,6 +13,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <string.h>
 
 #define MAXBUF 1024
 
@@ -34,6 +35,42 @@ int main(int argc, char **argv) {
 		fprintf(stdout, "Socket created.\n");
 	}
 
+	udp_server.sin_family = AF_INET;
+	udp_server.sin_addr.s_addr = htonl(INADDR_ANY);
+	udp_server.sin_port = htons(port);
+
+	int bind_return_status = bind(udp_socket, (struct sockaddr*) &udp_server, sizeof(udp_server));
+	if (bind_return_status == 0) {
+		fprintf(stdout, "Bind completed.\n");
+	} else {
+		fprintf(stderr, "Could not bind to address.\n");
+		close(udp_socket);
+		exit(udp_socket);
+	}
+
+	int addr_len = 0;
+	char buf[MAXBUF];
+	int return_status = 0;
+
+	while(1){
+		addr_len = sizeof(udp_client);
+		return_status = recvfrom(udp_socket, buf, MAXBUF, 0, (struct sockaddr *) &udp_client, &addr_len);
+
+		if(return_status == -1){
+			fprintf(stderr, "Could not receive message.\n");
+		}else {
+			printf("Received: %s\n", buf);
+
+			strcpy(buf, "OK");
+
+			return_status = sendto(udp_socket, buf, MAXBUF, 0, (struct sockaddr *) &udp_client, sizeof(udp_client));
+			if(return_status == -1){
+				fprintf(stderr, "Could not send confirmation.\n");
+			}else{
+				fprintf(stdout, "Confirmation sent.\n");
+			}
+		}
+	}
 
 	close(udp_socket);
 	return EXIT_SUCCESS;
