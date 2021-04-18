@@ -13,6 +13,9 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <string.h>
+
+static const int QUEUE_SIZE = 10;
 
 int main(int argc, char **argv) {
 	if (2 != argc) {
@@ -31,7 +34,7 @@ int main(int argc, char **argv) {
 		fprintf(stdout, "Socket created.\n");
 	}
 
-	bzero(&simple_server, sizeof(simple_server));
+	memset(&simple_server, 0, sizeof(simple_server));
 	simple_server.sin_family = AF_INET;
 	simple_server.sin_addr.s_addr = htonl(INADDR_ANY);
 	simple_server.sin_port = htons(simple_port);
