@@ -60,18 +60,21 @@ int main(int argc, char **argv) {
 
 	while(1){
 		struct sockaddr_in client_name = {0};
-		int simple_client = 0;
+		int simple_child_socket = 0;
 		int client_name_len = sizeof(client_name);
 
-		int simple_child_socket = accept(simple_socket, (struct sockaddr *) &client_name, &client_name_len);
-		if(simple_client == -1){
+		simple_child_socket = accept(simple_socket, (struct sockaddr *) &client_name, &client_name_len);
+		if(simple_child_socket == -1){
 			fprintf(stderr, "Cannot accept client connection.\n");
-			close(simple_client);
+			close(simple_child_socket);
 			exit(EXIT_FAILURE);
 		}
 
 		write(simple_child_socket, SERVER_RESPONSE, strlen(SERVER_RESPONSE));
+		close(simple_child_socket);
 	}
+
+	close(simple_socket);
 
 	return EXIT_SUCCESS;
 }
