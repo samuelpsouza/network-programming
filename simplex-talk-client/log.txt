@@ -8,9 +8,9 @@ Starting client 3
 Starting client 4
 --------------------------------------------------------
 Starting client 5
+Client connected
 --------------------------------------------------------
 Starting client 6
-Client connected
 Client connected
 --------------------------------------------------------
 Starting client 7
@@ -22,129 +22,9 @@ Client connected
 Starting client 9
 Client connected
 --------------------------------------------------------
-Starting client 10
-Client connected
-Client connected
-Client connected
-Client connected
-Client connected
---------------------------------------------------------
-Starting client 1
---------------------------------------------------------
-Starting client 2
---------------------------------------------------------
-Starting client 3
---------------------------------------------------------
-Starting client 4
---------------------------------------------------------
-Starting client 5
---------------------------------------------------------
-Starting client 6
-Client connected
-Client connected
---------------------------------------------------------
-Starting client 7
---------------------------------------------------------
-Client connected
-Starting client 8
---------------------------------------------------------
-Starting client 9
-Client connected
-Client connected
---------------------------------------------------------
 Client connected
 Starting client 10
 Client connected
 Client connected
 Client connected
 Client connected
---------------------------------------------------------
-Starting client 1
---------------------------------------------------------
-Starting client 2
---------------------------------------------------------
-Starting client 3
---------------------------------------------------------
-Starting client 4
---------------------------------------------------------
-Starting client 5
---------------------------------------------------------
-Client connected
-Starting client 6
-Client connected
---------------------------------------------------------
-Starting client 7
---------------------------------------------------------
-Starting client 8
-Client connected
-Client connected
---------------------------------------------------------
-Starting client 9
-Client connected
---------------------------------------------------------
-Starting client 10
-Client connected
-Client connected
-Client connected
-Client connected
-Client connected
---------------------------------------------------------
-Starting client 1
---------------------------------------------------------
-Starting client 2
---------------------------------------------------------
-Starting client 3
---------------------------------------------------------
-Starting client 4
---------------------------------------------------------
-Starting client 5
---------------------------------------------------------
-Starting client 6
-Client connected
-Client connected
---------------------------------------------------------
-Starting client 7
---------------------------------------------------------
-Starting client 8
---------------------------------------------------------
-Starting client 9
---------------------------------------------------------
-Starting client 10
---------------------------------------------------------
-Starting client 1
---------------------------------------------------------
-Starting client 2
---------------------------------------------------------
-Starting client 3
---------------------------------------------------------
-Starting client 4
---------------------------------------------------------
-Starting client 5
---------------------------------------------------------
-Starting client 6
---------------------------------------------------------
-Starting client 7
---------------------------------------------------------
-Starting client 8
---------------------------------------------------------
-Starting client 9
---------------------------------------------------------
-Starting client 10
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
-simplex-talk: connected: Connection timed out
