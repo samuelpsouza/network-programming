@@ -12,7 +12,7 @@
 #include <netdb.h>
 
 #define SERVER_PORT 5432
-#define MAX_PENDING 5
+#define MAX_PENDING 1
 #define MAX_LINE 256
 
 int main() {

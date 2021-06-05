@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 		close(s);
 		exit(1);
 	}else {
-		fprintf(stdout, "Client connected\n");
+		fprintf(stdout, "Client bounded\n");
 	}
 	/* main loop: get and send lines of text */
 	while (fgets(buf, sizeof(buf), stdin)) {
