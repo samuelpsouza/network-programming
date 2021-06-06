@@ -42,7 +42,7 @@ def main():
         while True:
             # Accept TCP connection from client
             with server_socket.accept()[0] as connection_socket:
-                 
+                pass
  
                 # Fill in the code to recive the request, check if the url is
                 # in cache_dict and either serve the cached version or request
@@ -54,7 +54,7 @@ def main():
                 # If you want to do more after that you could try to handle
                 # updating cached pages, and then try to convert the server to
                 # a multithreaded version.
-     
+
     return 0
  
  
