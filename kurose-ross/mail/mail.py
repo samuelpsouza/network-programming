@@ -62,12 +62,12 @@ def send_mail(my_address, mail_server, their_address, message):
         print_reply_message("Response for AUTH LOGIN request:", res)
 
         client_socket.send(base64.b64encode(user.encode(DEFAUTL_ENCODE)))
-        client_socket.send("\r\n".encode(DEFAUTL_ENCODE))
+        client_socket.send("\n".encode(DEFAUTL_ENCODE))
         res = client_socket.recv(2048)
         print_reply_message("Response for user sent:", res)
 
         client_socket.send(base64.b64encode(pwd.encode(DEFAUTL_ENCODE)))
-        client_socket.send("\r\n".encode(DEFAUTL_ENCODE))
+        client_socket.send("\n".encode(DEFAUTL_ENCODE))
         res = client_socket.recv(2048)
         print_reply_message("Response for pwd sent:", res)
 
@@ -75,16 +75,19 @@ def send_mail(my_address, mail_server, their_address, message):
         res = client_socket.recv(1024)
         print_reply_message("Response for MAIL FROM request:", res)
 
-        for addr in their_address:
+        for addr in their_address.split(","):
             client_socket.send("RCPT TO:<{}>\n".format(addr).encode(DEFAUTL_ENCODE))
             res = client_socket.recv(1024)
+            print_reply_message("Response for RCPT TO request:", res)
                 
         client_socket.send("DATA\n".encode(DEFAUTL_ENCODE))
         res = client_socket.recv(1024)
         print_reply_message("Response for DATA request:", res)
 
         client_socket.send("{}\n".format(message).encode(DEFAUTL_ENCODE))
-        res = client_socket.recv(1024)
+        client_socket.send("\r\n.\r\n".encode(DEFAUTL_ENCODE))
+
+        res = client_socket.recv(2048)
         print_reply_message("Response for sending message:", res)
 
         client_socket.send("QUIT\n".encode(DEFAUTL_ENCODE))
